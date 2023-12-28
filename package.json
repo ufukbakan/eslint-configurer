@@ -1,0 +1,35 @@
+{
+  "name": "eslint-with-prettier",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.cjs",
+  "keywords": [
+    "eslint-with-prettier",
+    "eslint",
+    "prettier",
+    "combined",
+    "plugin",
+    "react",
+    "javascript",
+    "format",
+    "code",
+    "lint"
+  ],
+  "author": {
+    "name": "Ufuk Bakan",
+    "email": "println.ufukbakan@gmail.com",
+    "url": "https://tr.linkedin.com/in/ufuk-bakan"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ufukbakan/eslint-with-prettier.git"
+  }
+}
