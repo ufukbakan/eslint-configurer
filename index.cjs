@@ -1,7 +1,7 @@
 const utils = require("./util.cjs");
-const js = require("./js.cjs");
-const prettier = require("./prettier.cjs");
-const react = require("./react.cjs");
+const js = require("./configs/js.cjs");
+const prettier = require("./configs/prettier.cjs");
+const react = require("./configs/react.cjs");
 
 const pluginMap = {
   js: js.default,
