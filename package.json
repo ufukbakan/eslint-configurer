@@ -1,6 +1,6 @@
 {
   "name": "eslint-with-prettier",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "",
   "main": "index.cjs",
   "keywords": [
