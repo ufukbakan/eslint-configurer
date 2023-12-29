@@ -1,6 +1,6 @@
 {
   "name": "eslint-with-prettier",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
   "main": "index.cjs",
   "keywords": [
@@ -21,7 +21,8 @@
     "url": "https://tr.linkedin.com/in/ufuk-bakan"
   },
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-react": "^7.33.2",
