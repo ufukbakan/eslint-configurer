@@ -2,7 +2,7 @@
 ## Installation
 Recommended way (Needs global package [install-peerdeps](https://www.npmjs.com/package/install-peerdeps)):
 ```shell
-install-peerdeps eslint-config-airbnb -D
+install-peerdeps eslint-with-prettier -D
 ```
 ## Integration
 ### ESLint Configuration
