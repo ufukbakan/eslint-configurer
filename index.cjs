@@ -1,21 +1,15 @@
-const utils = require("./util.cjs");
-const js = require("./configs/js.cjs");
-const prettier = require("./configs/prettier.cjs");
-const react = require("./configs/react.cjs");
-const ts = require("./configs/ts.cjs");
+const genericImport = require("generic-import");
+const path = require("path");
 
-const pluginMap = {
-  js: js.default,
-  prettier: prettier.default,
-  react: react.default,
-  ts: ts.default
-};
+const configurations = genericImport(path.resolve(__dirname, "configs"));
+const pluginMap = Object.fromEntries(configurations.map(({ fileName, value }) => [fileName, value.default]));
 
 function configure(...plugins) {
-  const mappedPlugins = plugins.map((plugin) => pluginMap[plugin])
-  return utils.mergeDeep(...mappedPlugins);
+    const mappedPlugins = plugins.map((plugin) => pluginMap[plugin]);
+    const flatPlugins = mappedPlugins.map((plugin) => (Array.isArray(plugin) ? plugin.flat() : [plugin]));
+    return flatPlugins.reduce((acc, current) => [...acc, ...current], []);
 }
 
 module.exports = {
-  configure,
+    configure,
 };

@@ -1,13 +1,13 @@
+const {
+    configs: { recommended },
+} = require("@eslint/js");
+
 module.exports = {
-  default: {
-    env: {
-      browser: true,
-      es2021: true,
+    default: {
+        languageOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module",
+        },
+        rules: recommended.rules,
     },
-    extends: ["eslint:recommended"],
-    parserOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-    },
-  },
 };

@@ -1,26 +1,48 @@
-# eslint-with-prettier
+# eslint-configurer
+This package uses ESLint flat configs
 ## Installation
-Recommended way (Needs global package [install-peerdeps](https://www.npmjs.com/package/install-peerdeps)):
 ```shell
-install-peerdeps eslint-with-prettier -D
+npm i -D eslint-configurer
 ```
-## Integration
-### ESLint Configuration
-It's recommended to use .cjs file type for .eslintrc
-```cjs
-const { configure } = require("eslint-with-prettier");
+## Usage
+```eslint.config.mjs```
+```js
+import { configure } from "eslint-configurer";
 
-module.exports = {
-    ...configure("js", "react", "prettier"),
-    // your other eslint configurations (you may dont want to override configured values, so you can inspect output of configure method by logging in any js file)
-}
+export default configure("js", "ts", "react");
 ```
 
-You can customize prettier via your project's .prettierrc file
+## API
+```ts
+type Plugin = "js" | "react" | "prettier" | "ts" | "node";
+
+function configure(...plugins: Plugin[]): Array<Record<string, any>>;
+```
+
+## Recommended Integrations
+
+### .prettierrc
+It's recommended to create a .prettierrc configuration file at the source root when using "prettier" preset of this configurer. All configuration file types are supported. A yaml sample provided below:
+```.prettierrc.yaml```
+```yaml
+trailingComma: es5
+tabWidth: 4
+singleQuote: false
+printWidth: 200
+endOfLine: crlf
+overrides:
+  - files: "*.{ts,tsx}"
+    options:
+      bracketSameLine: true
+      bracketSpacing: true
+      cursorOffset: -1
+      jsxSingleQuote: true
+      printWidth: 80
+      semi: true
+```
 
 ### package.json
-This configuration has dependencies to ```husky``` and ```lint-staged```.
-
+This section has dependencies to ```husky``` and ```lint-staged```.
 The following package.json content is a good practice for linting before committing any file.
 
 ```json
@@ -29,19 +51,7 @@ The following package.json content is a good practice for linting before committ
     "prepare": "husky install && husky add .husky/pre-commit \"npm run lint\""
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "eslint"
-    ],
-    "*.jsx": [
-      "eslint --fix",
-      "eslint"
-    ],
-    "*.ts": [
-      "eslint --fix",
-      "eslint"
-    ],
-    "*.tsx": [
+    "*.{js,ts,jsx,tsx}": [
       "eslint --fix",
       "eslint"
     ]

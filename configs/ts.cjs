@@ -1,12 +1,11 @@
+const tslint = require("typescript-eslint");
+const recommended = tslint.configs.recommended;
+recommended.forEach((config) => {
+    if (config.rules) {
+        config.rules["no-undef"] = "error";
+    }
+});
+
 module.exports = {
-  default: {
-    overrides: [
-      {
-        files: ["*.ts", "*.tsx"],
-        parser: "@typescript-eslint/parser",
-        plugins: ["@typescript-eslint"],
-        extends: ["plugin:@typescript-eslint/recommended"],
-      },
-    ],
-  },
+    default: recommended,
 };

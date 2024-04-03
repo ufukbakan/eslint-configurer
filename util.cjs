@@ -1,4 +1,12 @@
 function merge(obj1, obj2) {
+  if (Array.isArray(obj1) && Array.isArray(obj2)) {
+    return [...obj1, ...obj2];
+  } else if (Array.isArray(obj1)) {
+    return [...obj1, obj2];
+  } else if (Array.isArray(obj2)) {
+    return [obj1, ...obj2];
+  }
+
   const merged = { ...obj1 };
 
   for (const key in obj2) {

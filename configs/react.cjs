@@ -1,17 +1,15 @@
+const reactPlugin = require("eslint-plugin-react");
+const reactHooksPlugin = require("eslint-plugin-react-hooks");
+const { mergeDeep } = require("../util.cjs");
+const { browser } = require("globals");
+
 module.exports = {
-  default: {
-    env: {
-      browser: true,
+    default: {
+        languageOptions: {
+            globals: {
+                ...browser,
+            },
+        },
+        ...mergeDeep(reactPlugin.configs.recommended, reactHooksPlugin.configs.recommended),
     },
-    extends: ["plugin:react/recommended", "plugin:react-hooks/recommended"],
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true,
-      },
-    },
-    plugins: ["react", "react-hooks"],
-    rules: {
-      "react/react-in-jsx-scope": "off",
-    },
-  },
 };

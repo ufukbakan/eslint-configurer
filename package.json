@@ -1,38 +1,46 @@
 {
-  "name": "eslint-with-prettier",
-  "version": "2.1.2",
-  "description": "",
-  "main": "index.cjs",
-  "keywords": [
-    "eslint-with-prettier",
-    "eslint",
-    "prettier",
-    "combined",
-    "plugin",
-    "react",
-    "javascript",
-    "format",
-    "code",
-    "lint"
-  ],
-  "author": {
-    "name": "Ufuk Bakan",
-    "email": "println.ufukbakan@gmail.com",
-    "url": "https://tr.linkedin.com/in/ufuk-bakan"
-  },
-  "license": "MIT",
-  "peerDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.1.1",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ufukbakan/eslint-with-prettier.git"
-  }
+    "name": "eslint-configurer",
+    "version": "1.0.0",
+    "description": "Apply multiple presets in a single line",
+    "main": "index.cjs",
+    "scripts": {
+        "test": "eslint ./test"
+    },
+    "keywords": [
+        "eslint",
+        "configurer",
+        "eslint-with-prettier",
+        "configurator",
+        "prettier",
+        "combined",
+        "plugin",
+        "react",
+        "javascript",
+        "format",
+        "node",
+        "browser",
+        "code",
+        "lint"
+    ],
+    "author": {
+        "name": "Ufuk Bakan",
+        "email": "println.ufukbakan@gmail.com",
+        "url": "https://tr.linkedin.com/in/ufuk-bakan"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ufukbakan/eslint-with-prettier.git"
+    },
+    "dependencies": {
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.1.3",
+        "eslint-plugin-react": "^7.34.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "generic-import": "^3.0.3",
+        "globals": "^15.0.0",
+        "typescript-eslint": "^7.5.0"
+    }
 }
+
